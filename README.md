@@ -1,54 +1,72 @@
-# React + TypeScript + Vite
+# Beacon Design System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Beacon** is a design system that lights the path to inclusive, thoughtful, and efficient digital experiences.  
+Rooted in accessibility and powered by scalable architecture, it brings clarity to complexity—helping teams move faster with purpose.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Figma Foundation File
 
-## Expanding the ESLint configuration
+View the foundational design file here:  
+[Beacon – Foundations in Figma](https://www.figma.com/design/C7CrLnQyrOL2eJJ5OHSq0r/Beacon---Foundations?m=auto&t=R0qhgtFIlk41rABo-6)  
+_Includes typography, spacing, color tokens, and component styles._
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Folder Structure
+
+The repository is initialized as a [Storybook](https://storybook.js.org/) project and follows this structure:
+
+```
+.
+├── .storybook/           # Storybook config files
+├── src/
+│   ├── components/       # UI components
+│   ├── tokens/           # Design tokens (color, spacing, typography)
+│   └── styles/           # Global styles or helpers
+├── public/               # Static assets
+├── docs/                 # System documentation
+├── README.md             # Project overview
+└── package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Future Roadmap
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+This project will evolve through iterative phases:
+
+### Phase 1: Foundations (in progress)
+
+- [x] Define core design principles and vision
+- [x] Set up foundational Figma styles (color, type, spacing)
+- [x] Initialize Storybook with project scaffolding
+
+### Phase 2: Token System + Core Components
+
+- [ ] Implement JSON/JS token infrastructure
+- [ ] Build core components: `Button`, `Input`, `Alert`, `Badge`
+- [ ] Sync visual and code tokens via Token Studio or Style Dictionary
+
+### Phase 3+: Automation, CI/CD, and AI Integration
+
+- [ ] Add automated a11y testing (axe-core, Storybook a11y)
+- [ ] Setup GitHub Actions for CI/CD and Chromatic visual testing
+- [ ] Integrate AI-assisted documentation (component usage, accessibility)
+
+---
+
+## Philosophy
+
+- **Accessible by default**: Accessibility is the baseline, not an enhancement.
+- **Clarity over customization**: Consistency and usability come first.
+- **Progressive structure**: Scale simply and iteratively.
+- **Documented and discoverable**: Everything has context.
+- **Evolve through use**: This system is alive and always improving.
+
+---
+
+## Feedback & Contributions
+
+This system is solo-developed but designed with collaboration in mind.  
+Issues, discussions, and feedback are welcome as the system grows.
