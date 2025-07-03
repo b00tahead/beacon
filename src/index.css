@@ -6,9 +6,12 @@
 
 @theme {
   /* Typography - Humanist fonts with system fallbacks */
-  --font-family-sans: Inter, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-sans: Inter, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-family-mono: "SF Mono", Monaco, Inconsolata, "Roboto Mono", "Cascadia Code", "JetBrains Mono", Consolas, "Courier New", monospace;
+  --font-family-sans: Inter, "Source Sans Pro", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: Inter, "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "SF Mono", Monaco, Inconsolata, "Roboto Mono",
+    "Cascadia Code", "JetBrains Mono", Consolas, "Courier New", monospace;
 
   /* 4px-based spacing scale */
   --spacing-1: 4px;
@@ -145,11 +148,16 @@
   --color-neutral-950: #0f0f0f;
 
   /* Elevation shadows */
-  --shadow-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.08);
-  --shadow-elevation-2: 0 2px 8px rgba(0, 0, 0, 0.12), 0 2px 16px rgba(0, 0, 0, 0.08);
-  --shadow-elevation-3: 0 4px 16px rgba(0, 0, 0, 0.16), 0 4px 32px rgba(0, 0, 0, 0.08);
-  --shadow-elevation-4: 0 8px 32px rgba(0, 0, 0, 0.2), 0 8px 64px rgba(0, 0, 0, 0.12);
-  --shadow-elevation-5: 0 16px 64px rgba(0, 0, 0, 0.24), 0 16px 128px rgba(0, 0, 0, 0.16);
+  --shadow-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.1),
+    0 1px 4px rgba(0, 0, 0, 0.08);
+  --shadow-elevation-2: 0 2px 8px rgba(0, 0, 0, 0.12),
+    0 2px 16px rgba(0, 0, 0, 0.08);
+  --shadow-elevation-3: 0 4px 16px rgba(0, 0, 0, 0.16),
+    0 4px 32px rgba(0, 0, 0, 0.08);
+  --shadow-elevation-4: 0 8px 32px rgba(0, 0, 0, 0.2),
+    0 8px 64px rgba(0, 0, 0, 0.12);
+  --shadow-elevation-5: 0 16px 64px rgba(0, 0, 0, 0.24),
+    0 16px 128px rgba(0, 0, 0, 0.16);
 
   /* Animation durations */
   --duration-immediate: 0ms;
@@ -160,11 +168,11 @@
   --duration-deliberate: 800ms;
 
   /* Easing curves */
-  --ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
-  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
-  --ease-in: cubic-bezier(0.4, 0.0, 1, 1);
-  --ease-in-out: cubic-bezier(0.4, 0.0, 0.6, 1);
-  --ease-sharp: cubic-bezier(0.4, 0.0, 0.6, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.6, 1);
+  --ease-sharp: cubic-bezier(0.4, 0, 0.6, 1);
 
   /* Border radius */
   --radius-sm: 2px;
@@ -196,7 +204,7 @@ html {
   html {
     scroll-behavior: auto;
   }
-  
+
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -223,14 +231,24 @@ body {
 }
 
 /* Typography hierarchy */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
   margin: 0;
   color: var(--color-neutral-900);
 }
 
-.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
   color: var(--color-neutral-50);
 }
 
@@ -268,12 +286,8 @@ p {
   margin: 0;
   font-size: var(--font-size-body);
   line-height: var(--line-height-relaxed);
-  color: var(--color-neutral-900);
 }
 
-.dark p {
-  color: var(--color-neutral-50);
-}
 
 /* Enhanced focus indicators for accessibility */
 *:focus-visible {
@@ -283,12 +297,20 @@ p {
 }
 
 /* Touch target requirements */
-button, a, input, select, textarea {
+button,
+a,
+input,
+select,
+textarea {
   min-height: 44px;
 }
 
 @media (min-width: 768px) {
-  button, a, input, select, textarea {
+  button,
+  a,
+  input,
+  select,
+  textarea {
     min-height: 32px;
   }
 }
