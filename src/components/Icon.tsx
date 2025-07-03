@@ -41,7 +41,7 @@ export const Icon: React.FC<IconProps> = ({
   return (
     <LucideIconComponent
       size={iconSize}
-      className={`inline-block ${className}`}
+      className={`inline-flex items-center ${className}`}
       aria-hidden={effectiveAriaHidden}
       aria-label={effectiveAriaLabel}
       role={effectiveRole}
