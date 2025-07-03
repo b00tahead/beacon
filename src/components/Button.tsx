@@ -1,72 +1,73 @@
-import React from 'react';
-import { type LucideIcon } from 'lucide-react';
-import { Icon } from './Icon';
+import React from "react";
+import { type LucideIcon } from "lucide-react";
+import { Icon } from "./Icon";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'destructive' | 'ghost';
-  size?: 'sm' | 'md' | 'lg';
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "primary" | "secondary" | "destructive" | "ghost";
+  size?: "sm" | "md" | "lg";
   icon?: LucideIcon;
-  iconPosition?: 'left' | 'right';
+  iconPosition?: "left" | "right";
   isLoading?: boolean;
   children: React.ReactNode;
   className?: string;
 }
 
 const variantStyles = {
-  primary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 border-transparent',
-  secondary: 'bg-white text-neutral-900 border-neutral-300 hover:bg-neutral-50 focus:ring-primary-500',
-  destructive: 'bg-error-600 text-white hover:bg-error-700 focus:ring-error-500 border-transparent',
-  ghost: 'bg-transparent text-neutral-700 hover:bg-neutral-100 focus:ring-primary-500 border-transparent',
+  primary:
+    "bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 border-transparent",
+  secondary:
+    "bg-white text-neutral-900 border-neutral-300 hover:bg-neutral-50 focus:ring-primary-500",
+  destructive:
+    "bg-error-600 text-white hover:bg-error-700 focus:ring-error-500 border-transparent",
+  ghost:
+    "bg-transparent text-neutral-700 hover:bg-neutral-100 focus:ring-primary-500 border-transparent",
 } as const;
 
 const sizeStyles = {
-  sm: 'px-3 py-2 text-sm gap-1.5',
-  md: 'px-4 py-2.5 text-base gap-2',
-  lg: 'px-6 py-3.5 text-lg gap-2.5',
+  sm: "px-3 py-2 text-body-sm gap-1.5",
+  md: "px-4 py-2.5 text-body-sm gap-2",
+  lg: "px-6 py-3.5 text-body gap-2.5",
 } as const;
 
 const iconSizes = {
-  sm: 'sm' as const,
-  md: 'sm' as const,
-  lg: 'md' as const,
+  sm: "sm" as const,
+  md: "sm" as const,
+  lg: "md" as const,
 } as const;
 
 export const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  size = 'md',
+  variant = "primary",
+  size = "md",
   icon,
-  iconPosition = 'left',
+  iconPosition = "left",
   isLoading = false,
   children,
-  className = '',
+  className = "",
   disabled,
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center rounded border transition-all duration-fast focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none font-sans font-medium';
-  
+  const baseStyles =
+    "inline-flex items-center justify-center rounded-md border transition-all duration-fast focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none font-sans font-semibold";
+
   const variantClasses = variantStyles[variant];
   const sizeClasses = sizeStyles[size];
   const iconSize = iconSizes[size];
-  
+
   const isDisabled = disabled || isLoading;
-  
+
   const iconElement = icon ? (
-    <Icon 
-      icon={icon} 
-      size={iconSize} 
-      aria-hidden={true} 
-      role="presentation"
-    />
+    <Icon icon={icon} size={iconSize} aria-hidden={true} role="presentation" />
   ) : null;
-  
+
   const content = (
     <>
-      {iconPosition === 'left' && iconElement}
+      {iconPosition === "left" && iconElement}
       <span>{children}</span>
-      {iconPosition === 'right' && iconElement}
+      {iconPosition === "right" && iconElement}
     </>
   );
-  
+
   return (
     <button
       className={`${baseStyles} ${variantClasses} ${sizeClasses} ${className}`}
@@ -77,7 +78,9 @@ export const Button: React.FC<ButtonProps> = ({
       {isLoading ? (
         <>
           <div className="animate-spin" aria-hidden={true} role="presentation">
-            <LoadingIcon size={iconSize === 'sm' ? 16 : iconSize === 'md' ? 20 : 24} />
+            <LoadingIcon
+              size={iconSize === "sm" ? 16 : iconSize === "md" ? 20 : 24}
+            />
           </div>
           <span>Loading...</span>
         </>
@@ -89,7 +92,11 @@ export const Button: React.FC<ButtonProps> = ({
 };
 
 // Simple loading icon component
-const LoadingIcon: React.FC<{ size?: number; className?: string }> = ({ size = 16, className = '', ...props }) => (
+const LoadingIcon: React.FC<{ size?: number; className?: string }> = ({
+  size = 16,
+  className = "",
+  ...props
+}) => (
   <svg
     width={size}
     height={size}
@@ -106,4 +113,4 @@ const LoadingIcon: React.FC<{ size?: number; className?: string }> = ({ size = 1
   </svg>
 );
 
-Button.displayName = 'Button';
+Button.displayName = "Button";
