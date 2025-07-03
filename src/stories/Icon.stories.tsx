@@ -112,7 +112,7 @@ export const Decorative: Story = {
   render: () => (
     <div className="flex items-center gap-2">
       <Icon icon={Home} aria-hidden role="presentation" />
-      <span>Home Page</span>
+      <span className="text-body text-neutral-900 font-sans">Home Page</span>
     </div>
   ),
   parameters: {
@@ -127,7 +127,7 @@ export const Decorative: Story = {
 export const Interactive: Story = {
   args: { icon: Star },
   render: () => (
-    <button className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors duration-fast">
+    <button className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white text-body font-sans rounded hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors duration-fast">
       <Icon icon={Search} size="sm" aria-hidden />
       Search
     </button>
@@ -163,19 +163,19 @@ export const StatusIcons: Story = {
     <div className="space-y-4">
       <div className="flex items-center gap-2">
         <Icon icon={Check} className="text-success-600" aria-label="Success" />
-        <span>Operation completed successfully</span>
+        <span className="text-body text-neutral-900 font-sans">Operation completed successfully</span>
       </div>
       <div className="flex items-center gap-2">
         <Icon icon={X} className="text-error-600" aria-label="Error" />
-        <span>Operation failed</span>
+        <span className="text-body text-neutral-900 font-sans">Operation failed</span>
       </div>
       <div className="flex items-center gap-2">
         <Icon icon={AlertTriangle} className="text-warning-600" aria-label="Warning" />
-        <span>Please review your input</span>
+        <span className="text-body text-neutral-900 font-sans">Please review your input</span>
       </div>
       <div className="flex items-center gap-2">
         <Icon icon={Info} className="text-info-600" aria-label="Information" />
-        <span>Additional information available</span>
+        <span className="text-body text-neutral-900 font-sans">Additional information available</span>
       </div>
     </div>
   ),
@@ -222,7 +222,7 @@ export const IconGallery: Story = {
       ].map(({ icon, label }) => (
         <div key={label} className="flex flex-col items-center gap-2 p-2">
           <Icon icon={icon} size="lg" aria-label={label} />
-          <span className="text-caption text-neutral-600">{label}</span>
+          <span className="text-caption text-neutral-600 font-sans">{label}</span>
         </div>
       ))}
     </div>
